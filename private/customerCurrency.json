@@ -1,0 +1,20 @@
+[
+  {"Customer Currency":"USD","CurrencyValue":1,"m":12,"y":2014},
+  {"Customer Currency":"USD","CurrencyValue":1,"m":1,"y":2015},
+  {"Customer Currency":"MXN","CurrencyValue":1.2,"m":12,"y":2014},
+  {"Customer Currency":"MXN","CurrencyValue":1.2,"m":1,"y":2015},
+  {"Customer Currency":"ZAR","CurrencyValue":1.2,"m":12,"y":2014},
+  {"Customer Currency":"ZAR","CurrencyValue":1.2,"m":1,"y":2015},
+  {"Customer Currency":"AUD","CurrencyValue":1.2,"m":12,"y":2014},
+  {"Customer Currency":"AUD","CurrencyValue":1.2,"m":1,"y":2015},
+  {"Customer Currency":"EUR","CurrencyValue":1.2,"m":12,"y":2014},
+  {"Customer Currency":"EUR","CurrencyValue":1.2,"m":1,"y":2015},
+  {"Customer Currency":"GBP","CurrencyValue":1.2,"m":12,"y":2014},
+  {"Customer Currency":"GBP","CurrencyValue":1.2,"m":1,"y":2015},
+  {"Customer Currency":"NOK","CurrencyValue":1.2,"m":12,"y":2014},
+  {"Customer Currency":"NOK","CurrencyValue":1.2,"m":1,"y":2015},
+  {"Customer Currency":"SEK","CurrencyValue":1.2,"m":12,"y":2014},
+  {"Customer Currency":"SEK","CurrencyValue":1.2,"m":1,"y":2015},
+  {"Customer Currency":"CAD","CurrencyValue":1.2,"m":12,"y":2014},
+  {"Customer Currency":"CAD","CurrencyValue":1.2,"m":1,"y":2015}
+]
