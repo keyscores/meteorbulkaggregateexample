@@ -28,6 +28,7 @@ _.each(appleData, function(e){
   //in moment.js january is month 0, needs offset
   e.month = parsedDate.month() + 1
   e.year = parsedDate.year()
+  e.timeStamp = parsedDate.valueOf()
   bulkSales.insert(e);
 })
 
@@ -50,21 +51,33 @@ Meteor.wrapAsync(bulkSales.execute)();
 var temp = Apple.rawCollection()
 var aggregateQuery = Meteor.wrapAsync(temp.aggregate, temp);
 
-var tempAgg = aggregateQuery([{
-  $group: {
-    _id: {//_id is a fixed property for mongo aggregate, cannot be changed
+var tempAgg = aggregateQuery([
+  {
+    $project:  {
+      timeStamp: "$timeStamp",
       region: "$region",
       title: "$Title",
-      country: "$Country Code"
-    },
-    //project : "$project",
-    dollarSales: {
-      $sum: {
-        $multiply: ["$Customer Price", "$currencyValue"]
+      country: "$Country Code",
+      "Customer Price": "$Customer Price",
+      currencyValue: "$currencyValue",
+      customerTotal: {$multiply: ["$Units", "$Customer Price", "$currencyValue" ]}
+    }
+  },
+  {
+    $group: {
+      _id: {//_id is a fixed property for mongo aggregate, cannot be changed
+        timeStamp: "$timeStamp",
+        region: "$region",
+        title: "$Title",
+        country: "$Country Code"
+      },
+      //project : "$project",
+      dollarSales: {
+        $sum:   "$customerTotal"
       }
     }
   }
-}]);
+]);
 
 console.log(tempAgg);
 
